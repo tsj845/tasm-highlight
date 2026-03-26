@@ -32,7 +32,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.tasm",
-                    "match": "\\b(add|sub|mul|div|brk|shl|shr|sar|xor|not|or|and|push|pop|cmp|test|xchg|cmpxchg|jmp|je|jz|jne|jnz|jl|jle|jb|jbe|jg|jge|ja|jae|ret|syscall|mov|hlt)\\b"
+                    "match": "\\b(add|sub|mul|div|brk|shl|shr|sar|xor|not|or|and|push|pop|cmp|test|xchg|cmpxchg|jmp|je|jz|jne|jnz|jl|jle|jb|jbe|jg|jge|ja|jae|call|ret|syscall|mov|hlt)\\b"
                 }
             ]
         },
