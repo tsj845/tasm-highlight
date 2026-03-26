@@ -1,0 +1,25 @@
+{
+  "name": "tasm-highlight",
+  "displayName": "tasm-highlight",
+  "description": "syntax highlighting for TASM",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "tasm",
+      "aliases": ["TASM", "tasm"],
+      "extensions": [".tasm"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "tasm",
+      "scopeName": "source.tasm",
+      "path": "./syntaxes/tasm.tmLanguage.json"
+    }]
+  }
+}

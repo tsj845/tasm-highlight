@@ -1,0 +1,106 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "TASM",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+        {
+            "include": "#sections"
+        },
+		{
+			"include": "#strings"
+		},
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#prefixes"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#mnemonics"
+        },
+        {
+            "include": "#words"
+        }
+	],
+	"repository": {
+        "mnemonics": {
+            "patterns": [
+                {
+                    "name": "keyword.control.tasm",
+                    "match": "\\b(add|sub|mul|div|brk|shl|shr|sar|xor|not|or|and|push|pop|cmp|test|xchg|cmpxchg|jmp|je|jz|jne|jnz|jl|jle|jb|jbe|jg|jge|ja|jae|ret|syscall|mov|hlt)\\b"
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.tasm",
+                    "match": "\\b(?<!#)([0-9]*\\.)?[0-9]+\\b"
+                }
+            ]
+        },
+        "words": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.tasm",
+                    "match": "^\\s*[a-zA-Z@_\\.#]{1}[a-zA-Z0-9@_\\.]*:"
+                },
+                {
+                    "name": "entity.name.tasm",
+                    "match": "[a-zA-Z@_\\.#]{1}[a-zA-Z0-9@_\\.]*"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [{
+                "name":"comment.line",
+                "match": ";.*$"
+            }]
+        },
+        "sections": {
+            "patterns": [
+                {
+                    "name": "keyword.control.tasm",
+                    "match": "!section"
+                },
+                {
+                    "name": "constant.language.tasm",
+                    "match": "(?<=!section\\s*)\\.(conf|data|code|indx)$"
+                }
+            ]
+        },
+		"keywords": {
+			"patterns": [
+                {
+                    "name": "keyword.control.less.tasm",
+                    "match": "!(purpose|name|some|none|fstr|invar|str|s32|res|f64)"
+                }
+            ]
+		},
+		"strings": {
+			"name": "string.quoted.double.tasm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.tasm",
+					"match": "\\\\."
+				}
+			]
+		},
+        "prefixes": {
+            "patterns": [
+                {
+                    "name": "storage.type.tasm",
+                    "match": "\\([a-zA-Z]*?\\)"
+                }
+            ]
+        }
+	},
+	"scopeName": "source.tasm"
+}
