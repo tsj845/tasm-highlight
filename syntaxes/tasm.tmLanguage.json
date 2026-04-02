@@ -78,7 +78,7 @@
 			"patterns": [
                 {
                     "name": "keyword.control.less.tasm",
-                    "match": "!(purpose|name|some|none|fstr|invar|str|s32|res|f64)"
+                    "match": "!(purpose|name|some|none|fstr|invar|str|s32|res|f64|extern)"
                 }
             ]
 		},
